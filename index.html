@@ -270,7 +270,10 @@
             var gamesTotal;             //total number of games
             var winsTotal;              //total number of wins
             var bustaBusta = false;     //have we busted?
-            var fillingProgressBarPercentage;           //
+            var fillingProgressBarPercentage;           // this was not needed globally at all i can probably delete it later
+
+
+            //this function should set all of our starting game conditions on page load or game reset
 
             function gameConditionStart() {
 
@@ -279,8 +282,8 @@
                 console.log("GOAL: " + gemGoal);
 
                 gem1 = Math.floor(Math.random() * 11) + 1;
-                $('.gem1div').attr('value', gem1);                   //sets gem1div's value to the roll
-                $('.gem1value').html(gem1);                 //sets the unrevealed popup to the value as well
+                $('.gem1div').attr('value', gem1);                  //sets gem1div's value to the roll
+                $('.gem1value').html(gem1);                         //sets the unrevealed popup to the value as well
                 console.log("gem1: " + gem1);
 
                 gem2 = Math.floor(Math.random() * 11) + 1;
@@ -306,11 +309,10 @@
 
                 bustaBusta = false;
 
-
-
             }
 
-            gameConditionStart();
+
+            //this is the function to update all of our displayed values
 
             function displayOutputUpdate() {
 
@@ -325,7 +327,9 @@
                 var barHolder = Math.floor((total/gemGoal)*100);
                 console.log("current percentage bar: " + barHolder);
 
-                //i'm hoping this should update the status bar as it's going
+                //                  this took entirely too long and it would've worked the way I wrote it originally
+                // (╯°□°）╯︵ ┻━┻   if i'd actually looked at the we3 examples and seen they used bootstrap 3 and the 
+                //                  class names had changed in bootstrap 4
 
                 if (barHolder < 100) {
 
@@ -347,18 +351,26 @@
                 }
             }
 
+
+            //an event listener waiting for someone to click on a gem
+
             $(".geminput").on("click", function() {
+
                 var buttonClick = $(this).attr("value");
                 console.log(this);
                 buttonClick = parseInt(buttonClick);
                 console.log(buttonClick);
                 total = buttonClick + total;
+
                 displayOutputUpdate();
 
+
+                //this is where that pretty text pop-up comes from, I probably could've written this as a function somehow ¯\_(ツ)_/¯
+
                 if ($(this).hasClass('gem1div')) {
-                    $('.gem1value').removeClass('slideInUp');
-                    $('.gem1value').css('visibility','visible').fadeIn("fast").addClass('slideInUp');
-                    setTimeout(function() {$('.gem1value').fadeOut("fast").removeClass('slideInUp');}, 900);
+                    $('.gem1value').removeClass('slideInUp');                                                   //removes the animation if you're clicking rapidly to restart it - this does not seem to work the way I want it to
+                    $('.gem1value').css('visibility','visible').fadeIn("fast").addClass('slideInUp');           //adds in the slide animation and fades in the value
+                    setTimeout(function() {$('.gem1value').fadeOut("fast").removeClass('slideInUp');}, 900);    //waits .9s and fades the value you back out
                 }
                 if ($(this).hasClass('gem2div')) {
                     $('.gem2value').removeClass('slideInUp');
@@ -376,6 +388,9 @@
                     setTimeout(function() {$('.gem4value').fadeOut("fast").removeClass('slideInUp');}, 900);
                 }
             });
+
+            gameConditionStart();
+            displayOutputUpdate();
 
         });
 
