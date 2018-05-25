@@ -24,10 +24,19 @@
             #biggem{
                 height: 200px;
                 width: auto;
+                text-align:center;
             }
 
-            #biggemmessage{
-                
+            #bigGemMessage{
+                position: absolute;
+                left: 0;
+                top: 35%;
+                width: 100%;
+                text-align: center;
+                font-size: 96px;
+                line-height: 8px;
+                -webkit-text-stroke-width: 2px;
+                -webkit-text-stroke-color: black;
             }
 
             #smallgem{
@@ -47,6 +56,12 @@
             .currentTotalOutput{
                 font-size: 36px;
                 color: palegoldenrod;
+            }
+            
+            .progress {
+                height: 2rem;
+                margin-top: 6px;
+                border-radius: 25px;
             }
 
             .gemScoreSpacer{
@@ -187,20 +202,18 @@
             </div>
             <div class="row">
                 <div class="col-md-2"></div>
-                <div class="col-md-8 center-block text-center diamondoutput"><img id="biggem" src="diamondtop.png"></div>
+                <div class="col-md-8 center-block text-center diamondoutput"><img id="biggem" src="diamondtop.png"><div id="bigGemMessage"></div></div>
                 <div class="col-md-2"></div>
             </div>
-            <div class="row">
-                    <div class="col-md-12 text-center"><h2 class="fatDiamondText">THIS IS THE BIG DIAMOND'S NUMBER</h2></div>
-                </div>
+            <br>
             <br>
             <div class="row text-center">
                 <!-- this is the place for the status bar and current total --> 
                 <div class="col-md-2"></div>
-                <div class="col-md-2 currentTotalOutput text-center center-block"><h2>00</h2></div>
+                <div class="col-md-2 text-center center-block"><h2 class="currentTotalOutput">00</h2></div>
                 <div class="col-md-4 center-block text-center">
                         <div class="progress center-block">
-                                <div class="progress-bar progress-bar-striped progress-bar-animated active center-block" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+                                <div class="progress-bar progress-bar-striped progress-bar-info progress-bar-animated active center-block" id="nicebar" role="progressbar" aria-valuenow="01" aria-valuemin="0" aria-valuemax="100" style="width:01%">
                                 </div>
                         </div>
                         </div>
@@ -293,13 +306,15 @@
 
                 bustaBusta = false;
 
+
+
             }
 
             gameConditionStart();
 
             function displayOutputUpdate() {
 
-                $('.fatDiamondText').html(gemGoal);
+                $('#bigGemMessage').html(gemGoal);
                 $('.currentTotalOutput').html(total);
 
                 //$('.')
@@ -315,16 +330,17 @@
                 if (barHolder < 100) {
 
                     $('.progress-bar').attr('aria-valuenow', barHolder).css('width', barHolder+"%");
+                    $('.progress-bar').css('background-color', "#007bff");
 
                 } else if ( barHolder == 100) {
 
                     $('.progress-bar').attr('aria-valuenow', 100).css('width', 100+"%");
-                    $('.progress-bar').addClass('progress-bar-warning');
+                    $('.progress-bar').css('background-color', "orange");
 
                 } else {
 
                     $('.progress-bar').attr('aria-valuenow', 100).css('width', 100+"%");
-                    $('.progress-bar').addClass('progress-bar-danger');
+                    $('.progress-bar').css('background-color', "darkred");
                     bustaBusta = true;
                     console.log('bust');
 
@@ -333,10 +349,28 @@
 
             $(".geminput").on("click", function() {
                 var buttonClick = $(this).attr("value");
+                console.log(this);
                 buttonClick = parseInt(buttonClick);
                 console.log(buttonClick);
                 total = buttonClick + total;
                 displayOutputUpdate();
+
+                if ($(this).hasClass('gem1div')) {
+                    $('.gem1value').css('visibility','visible').addClass('slideInUp');
+                    setTimeout(function() {$('.gem1value').css('visibility','hidden').removeClass('slideInUp');}, 1500);
+                }
+                if ($(this).hasClass('gem2div')) {
+                    $('.gem2value').css('visibility','visible').addClass('slideInUp');
+                    setTimeout(function() {$('.gem2value').css('visibility','hidden').removeClass('slideInUp');}, 1500);
+                }
+                if ($(this).hasClass('gem3div')) {
+                    $('.gem3value').css('visibility','visible').addClass('slideInUp');
+                    setTimeout(function() {$('.gem3value').css('visibility','hidden').removeClass('slideInUp');}, 1500);
+                }
+                if ($(this).hasClass('gem4div')) {
+                    $('.gem4value').css('visibility','visible').addClass('slideInUp');
+                    setTimeout(function() {$('.gem4value').css('visibility','hidden').removeClass('slideInUp');}, 1500);
+                }
             });
 
         });
