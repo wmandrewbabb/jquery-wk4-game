@@ -65,12 +65,12 @@
             }
 
             .gemScoreSpacer{
-                height: 66px;
+                height: 85px;
                 overflow: visible;
             }
 
             .gemoutput{
-                font-size:30px;
+                font-size:56px;
                 color: palegoldenrod;
                 -webkit-text-stroke: 0.5px black;
                 text-shadow: 1px black;
@@ -116,8 +116,8 @@
             .slideInUp {
                 -webkit-animation-name: slideInUp;
                 animation-name: slideInUp;
-                -webkit-animation-duration: 1s;
-                animation-duration: 1s;
+                -webkit-animation-duration: 0.7s;
+                animation-duration: 0.7s;
                 -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
             }
@@ -220,13 +220,12 @@
                 <div class="col-md-2 text-center center-block"><h2>BUST?</h2></div>
                 <div class="col-md-2"></div>
             </div>
-            <br>          <!--   we're doing some spaces before the gem selectors -->
             <div class="row center-block text-center">
                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
-                    <div class="col-xs-2 col-sm-2 col-md-2 gemoutput gem1value">V1</div>
-                    <div class="col-xs-2 col-sm-2 col-md-2 gemoutput gem2value">V2</div>
-                    <div class="col-xs-2 col-sm-2 col-md-2 gemoutput gem3value">V3</div>
-                    <div class="col-xs-2 col-sm-2 col-md-2 gemoutput gem4value">V4</div>
+                    <div class="col-xs-2 col-sm-2 col-md-2 gemoutput gemScoreSpacer"><div class="gem1value"></div></div>
+                    <div class="col-xs-2 col-sm-2 col-md-2 gemoutput"><div class="gem2value"></div></div>
+                    <div class="col-xs-2 col-sm-2 col-md-2 gemoutput"><div class="gem3value"></div></div>
+                    <div class="col-xs-2 col-sm-2 col-md-2 gemoutput"><div class="gem4value"></div></div>
                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
                 </div>
             <div class="row center-block text-center">
@@ -240,10 +239,11 @@
             <br>
             <div class="row">
                 <div class="col-md-2"></div>
-                <div class="col-md-4">
-                    <div class="row">
+                <div class="col-md-4 center-block">
+                    <div class="row align-right">
                         <div class="col-md-2 buttonforreset">RESET</div>
-                        <div class="col-md-2">WIN/LOSS</div>
+                        <br>
+                        <div class="col-md-2 winlossinfo">WIN/LOSS</div>
                     </div>
                 </div>
                 <div class="col-md-4 text-center">
@@ -356,20 +356,24 @@
                 displayOutputUpdate();
 
                 if ($(this).hasClass('gem1div')) {
-                    $('.gem1value').css('visibility','visible').addClass('slideInUp');
-                    setTimeout(function() {$('.gem1value').css('visibility','hidden').removeClass('slideInUp');}, 1500);
+                    $('.gem1value').removeClass('slideInUp');
+                    $('.gem1value').css('visibility','visible').fadeIn("fast").addClass('slideInUp');
+                    setTimeout(function() {$('.gem1value').fadeOut("fast").removeClass('slideInUp');}, 900);
                 }
                 if ($(this).hasClass('gem2div')) {
-                    $('.gem2value').css('visibility','visible').addClass('slideInUp');
-                    setTimeout(function() {$('.gem2value').css('visibility','hidden').removeClass('slideInUp');}, 1500);
+                    $('.gem2value').removeClass('slideInUp');
+                    $('.gem2value').css('visibility','visible').fadeIn("fast").addClass('slideInUp');
+                    setTimeout(function() {$('.gem2value').fadeOut("fast").removeClass('slideInUp');}, 900);
                 }
                 if ($(this).hasClass('gem3div')) {
-                    $('.gem3value').css('visibility','visible').addClass('slideInUp');
-                    setTimeout(function() {$('.gem3value').css('visibility','hidden').removeClass('slideInUp');}, 1500);
+                    $('.gem3value').removeClass('slideInUp');
+                    $('.gem3value').css('visibility','visible').fadeIn("fast").addClass('slideInUp');
+                    setTimeout(function() {$('.gem3value').fadeOut("fast").removeClass('slideInUp');}, 900);
                 }
                 if ($(this).hasClass('gem4div')) {
-                    $('.gem4value').css('visibility','visible').addClass('slideInUp');
-                    setTimeout(function() {$('.gem4value').css('visibility','hidden').removeClass('slideInUp');}, 1500);
+                    $('.gem4value').removeClass('slideInUp');
+                    $('.gem4value').css('visibility','visible').fadeIn("fast").addClass('slideInUp');
+                    setTimeout(function() {$('.gem4value').fadeOut("fast").removeClass('slideInUp');}, 900);
                 }
             });
 
