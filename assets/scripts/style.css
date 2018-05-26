@@ -27,20 +27,20 @@ body {
     background: url('../images/gemsbg30.png') repeat 0 0 #352551;
     -webkit-animation: gemBgSlide 20s linear infinite;
     z-index: -1;
-
+    
 }
 
 #linearDown {
-    background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.99) 0%,rgba(0,0,0,0) 100%);
 }
 
 #linearUp {
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 10%,rgba(0,0,0,0.8) 99%,rgba(0,0,0,0.8) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 10%,rgba(0,0,0,0.99) 99%,rgba(0,0,0,0.99) 100%);
     padding-bottom: 16px;
 }
 
 #linearBlack{
-    background: rgba(0,0,0,0.8); 
+    background: rgba(0,0,0,0.99); 
     padding-bottom: 16px;
 }
 
