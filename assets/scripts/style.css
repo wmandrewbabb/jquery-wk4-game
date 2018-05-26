@@ -1,15 +1,15 @@
 body {
                 
-    background-color: #352551;
+    background-color: #000000;
     color: white;
     font-family: 'Dosis', sans-serif;
 }
 
-
-.gameBody::after {
+/* this was a neat experiment */
+/* .gameBody::after {
     
     content: "";
-    background: url('../images/gemsbg30.png') repeat 0 0 #352551;
+    background: url('../images/gemsbg30b.png') repeat 0 0 #352551;
     -webkit-animation: gemBgSlide 20s linear infinite;
     opacity: 0.05;
     top: 0;
@@ -20,6 +20,30 @@ body {
     z-index: -1;   
     overflow: hidden;
 
+} */
+
+#gameBody {
+
+    background: url('../images/gemsbg30.png') repeat 0 0 #352551;
+    -webkit-animation: gemBgSlide 20s linear infinite;
+    z-index: -1;
+
+}
+
+.row {
+    padding-bottom: 10px;
+}
+
+#linearDown {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0) 100%);
+}
+
+#linearUp {
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 10%,rgba(0,0,0,0.8) 99%,rgba(0,0,0,0.8) 100%);
+}
+
+#linearBlack{
+    background: rgba(0,0,0,0.8);
 }
 
 p{
@@ -329,11 +353,11 @@ h1 {
 
     .modalContent {
         background: #4d004d;
-        background: url('../images/gembusterbg.png') repeat 0 0 #352551;
-        -webkit-animation: modalBgSlide 20s linear infinite;
+        background: url('../images/gembusterbg.png') repeat 0 0 #51253d;
+        -webkit-animation: modalBgSlide 5s linear infinite;
         margin: 15% auto; 
         padding: 20px;
-        border: 4px solid rebeccapurple;
+        border: 8px solid rgb(119, 0, 99);
         width: 480px; 
         min-height: 240px;
         border-radius: 40px;
