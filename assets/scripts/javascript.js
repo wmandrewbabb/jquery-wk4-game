@@ -53,20 +53,12 @@
                 //reset some display states
 
                 $('.bustMessage').css('visibility', 'hidden');
+                $('.bustMessage').removeClass('bounceIn');
+                $('.customModal').css('display', 'none');
                 
-                if ($('.bustMessage').hasClass('bounceIn')) {
-                    $('.bustMessage').removeClass('bounceIn');
-                }
-
-                if ($('.customModal').css('display', 'show')) {
-                    $('.customModal').css('display', 'none');
-                }
 
                 //animate the gems falling off and being replaced
-                $('.gem1div').addClass("fadeOutDown");
-                $('.gem2div').addClass("fadeOutDown");
-                $('.gem3div').addClass("fadeOutDown");
-                $('.gem4div').addClass("fadeOutDown");
+                $('.gem1div,.gem2div,.gem3div,.gem4div').addClass("fadeOutDown");
 
                 setTimeout(function(){
 
@@ -91,15 +83,9 @@
                     if (gem4RandomSrc == 2) { $('.gem4img').attr('src', 'assets/images/seafoamgem4.png');}
 
                     //let's put the gems back up now that we've swapped them
-                    $('.gem1div').removeClass("fadeOutDown").addClass('fadeInUp');
-                    $('.gem2div').removeClass("fadeOutDown").addClass('fadeInUp');
-                    $('.gem3div').removeClass("fadeOutDown").addClass('fadeInUp');
-                    $('.gem4div').removeClass("fadeOutDown").addClass('fadeInUp');
+                    $('.gem1div,.gem2div,.gem3div,.gem4div').removeClass("fadeOutDown").addClass('fadeInUp');
 
-                    setTimeout(function(){$('.gem1div').removeClass('fadeInUp');}, 500);
-                    setTimeout(function(){$('.gem2div').removeClass('fadeInUp');}, 500);
-                    setTimeout(function(){$('.gem3div').removeClass('fadeInUp');}, 500);
-                    setTimeout(function(){$('.gem4div').removeClass('fadeInUp');}, 500);
+                    setTimeout(function(){$('.gem1div,.gem2div,.gem3div,.gem4div').removeClass('fadeInUp');}, 500);
 
                 }, 500);
 
