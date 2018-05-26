@@ -30,20 +30,18 @@ body {
 
 }
 
-.row {
-    padding-bottom: 10px;
-}
-
 #linearDown {
     background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0) 100%);
 }
 
 #linearUp {
     background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 10%,rgba(0,0,0,0.8) 99%,rgba(0,0,0,0.8) 100%);
+    padding-bottom: 16px;
 }
 
 #linearBlack{
-    background: rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.8); 
+    padding-bottom: 16px;
 }
 
 p{
