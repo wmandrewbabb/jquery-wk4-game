@@ -70,10 +70,11 @@ p{
 }
 
 #smallgem{
-    height: 100px;
     width: auto;
+    height: auto;
+    max-height: 100px;
+    max-width: 80px;
     z-index: 1;
-
 }
 
 h1 {
@@ -433,3 +434,78 @@ h1 {
         from { background-position: 0 0; }
         to { background-position: -400px 0px; }
     }
+
+    /*Once again, many of these keyframes are used from Animate.css (https://daneden.github.io/animate.css/) by Daniel Eden */
+
+    .fadeOutDown {
+        -webkit-animation-name: fadeOutDown;
+        animation-name: fadeOutDown;
+        -webkit-animation-duration: 0.5s;
+        animation-duration: 0.5s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        animation-iteration-count: 1;
+    }
+
+    .fadeInUp {
+        -webkit-animation-name: fadeInUp;
+        animation-name: fadeInUp;
+        -webkit-animation-duration: 0.5s;
+        animation-duration: 0.5s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        animation-iteration-count: 1;
+    }
+
+    @-webkit-keyframes fadeInUp {
+        from {
+          opacity: 0;
+          -webkit-transform: translate3d(0, 100%, 0);
+          transform: translate3d(0, 100%, 0);
+        }
+      
+        to {
+          opacity: 1;
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+        }
+      }
+      
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          -webkit-transform: translate3d(0, 100%, 0);
+          transform: translate3d(0, 100%, 0);
+        }
+      
+        to {
+          opacity: 1;
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+        }
+      }
+      
+      @-webkit-keyframes fadeOutDown {
+        from {
+          opacity: 1;
+        }
+      
+        to {
+          opacity: 0;
+          -webkit-transform: translate3d(0, 100%, 0);
+          transform: translate3d(0, 100%, 0);
+        }
+      }
+      
+      @keyframes fadeOutDown {
+        from {
+          opacity: 1;
+        }
+      
+        to {
+          opacity: 0;
+          -webkit-transform: translate3d(0, 100%, 0);
+          transform: translate3d(0, 100%, 0);
+        }
+      }
+      

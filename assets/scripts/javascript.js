@@ -49,7 +49,8 @@
                 console.log("gem1: " + gem4);
 
                 bustaBusta = false;
-                gameIsPlaying = true;
+
+                //reset some display states
 
                 $('.bustMessage').css('visibility', 'hidden');
                 
@@ -60,6 +61,53 @@
                 if ($('.customModal').css('display', 'show')) {
                     $('.customModal').css('display', 'none');
                 }
+
+                //animate the gems falling off and being replaced
+                $('.gem1div').addClass("fadeOutDown");
+                $('.gem2div').addClass("fadeOutDown");
+                $('.gem3div').addClass("fadeOutDown");
+                $('.gem4div').addClass("fadeOutDown");
+
+                setTimeout(function(){
+
+                    var gem1RandomSrc = Math.floor(Math.random()*3);
+                    console.log(gem1RandomSrc);
+                    if (gem1RandomSrc == 0) { $('.gem1img').attr('src', 'assets/images/purplegem1.png');}
+                    if (gem1RandomSrc == 1) { $('.gem1img').attr('src', 'assets/images/bluegem1.png');}
+                    if (gem1RandomSrc == 2) { $('.gem1img').attr('src', 'assets/images/pinkgem1.png');}
+
+                    var gem2RandomSrc = Math.floor(Math.random()*3);
+                    console.log(gem2RandomSrc);
+                    if (gem2RandomSrc == 0) { $('.gem2img').attr('src', 'assets/images/redgem2.png');}
+                    if (gem2RandomSrc == 1) { $('.gem2img').attr('src', 'assets/images/yellowgem2.png');}
+                    if (gem2RandomSrc == 2) { $('.gem2img').attr('src', 'assets/images/tealgem2.png');}
+
+                    var gem3RandomSrc = Math.floor(Math.random()*3);
+                    console.log(gem3RandomSrc);
+                    if (gem3RandomSrc == 0) { $('.gem3img').attr('src', 'assets/images/greengem3.png');}
+                    if (gem3RandomSrc == 1) { $('.gem3img').attr('src', 'assets/images/pinkgem3.png');}
+                    if (gem3RandomSrc == 2) { $('.gem3img').attr('src', 'assets/images/goldgem3.png');}
+
+                    var gem4RandomSrc = Math.floor(Math.random()*3);
+                    console.log(gem4RandomSrc);
+                    if (gem4RandomSrc == 0) { $('.gem4img').attr('src', 'assets/images/orangegem4.png');}
+                    if (gem4RandomSrc == 1) { $('.gem4img').attr('src', 'assets/images/violetgem4.png');}
+                    if (gem4RandomSrc == 2) { $('.gem4img').attr('src', 'assets/images/seafoamgem4.png');}
+
+                    //let's put the gems back up now that we've swapped them
+                    $('.gem1div').removeClass("fadeOutDown").addClass('fadeInUp');
+                    $('.gem2div').removeClass("fadeOutDown").addClass('fadeInUp');
+                    $('.gem3div').removeClass("fadeOutDown").addClass('fadeInUp');
+                    $('.gem4div').removeClass("fadeOutDown").addClass('fadeInUp');
+
+                    setTimeout(function(){$('.gem1div').removeClass('fadeInUp');}, 500);
+                    setTimeout(function(){$('.gem2div').removeClass('fadeInUp');}, 500);
+                    setTimeout(function(){$('.gem3div').removeClass('fadeInUp');}, 500);
+                    setTimeout(function(){$('.gem4div').removeClass('fadeInUp');}, 500);
+
+                }, 500);
+
+                gameIsPlaying = true;
 
             }
 
