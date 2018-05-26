@@ -71,25 +71,21 @@
                 setTimeout(function(){
 
                     var gem1RandomSrc = Math.floor(Math.random()*3);
-                    console.log(gem1RandomSrc);
                     if (gem1RandomSrc == 0) { $('.gem1img').attr('src', 'assets/images/purplegem1.png');}
                     if (gem1RandomSrc == 1) { $('.gem1img').attr('src', 'assets/images/bluegem1.png');}
                     if (gem1RandomSrc == 2) { $('.gem1img').attr('src', 'assets/images/pinkgem1.png');}
 
                     var gem2RandomSrc = Math.floor(Math.random()*3);
-                    console.log(gem2RandomSrc);
                     if (gem2RandomSrc == 0) { $('.gem2img').attr('src', 'assets/images/redgem2.png');}
                     if (gem2RandomSrc == 1) { $('.gem2img').attr('src', 'assets/images/yellowgem2.png');}
                     if (gem2RandomSrc == 2) { $('.gem2img').attr('src', 'assets/images/tealgem2.png');}
 
                     var gem3RandomSrc = Math.floor(Math.random()*3);
-                    console.log(gem3RandomSrc);
                     if (gem3RandomSrc == 0) { $('.gem3img').attr('src', 'assets/images/greengem3.png');}
                     if (gem3RandomSrc == 1) { $('.gem3img').attr('src', 'assets/images/pinkgem3.png');}
                     if (gem3RandomSrc == 2) { $('.gem3img').attr('src', 'assets/images/goldgem3.png');}
 
                     var gem4RandomSrc = Math.floor(Math.random()*3);
-                    console.log(gem4RandomSrc);
                     if (gem4RandomSrc == 0) { $('.gem4img').attr('src', 'assets/images/orangegem4.png');}
                     if (gem4RandomSrc == 1) { $('.gem4img').attr('src', 'assets/images/violetgem4.png');}
                     if (gem4RandomSrc == 2) { $('.gem4img').attr('src', 'assets/images/seafoamgem4.png');}
@@ -215,7 +211,7 @@
 
                 } else if (bustaBusta == false) {
 
-                    $('.bustMessage').css('visibility', 'visible').css('color', 'palegoldenrod').css('-webkit-text-stroke-color', 'white').text('WIN!');
+                    $('.bustMessage').css('visibility', 'visible').css('color', 'palegoldenrod').css('-webkit-text-stroke-color', 'white').text('GOAL!');
 
                 }
 
@@ -228,14 +224,14 @@
 
                         $('.customModal').css('display', 'block');
                         $('.modalBannerText').html('YOU BUSTED!').attr('id', 'modalTextBusted');
-                        $('#modalBodyText').html("BETTER LUCK NEXT TIME!");
+                        $('#modalBodyText').html("DON'T GO OVER THE DIAMOND'S VALUE!");
                         gamesTotal++;                        
                         
                     } else {
 
                         $('.customModal').css('display', 'block');
                         $('.modalBannerText').html('YOU WON!').attr('id', 'modalTextVictory');
-                        $('#modalBodyText').html("YOU MATCHED THE DIAMOND!");
+                        $('#modalBodyText').html("YOU MATCHED THE DIAMOND'S VALUE!");
                         gamesTotal++;
                         winsTotal++;
 

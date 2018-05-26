@@ -126,6 +126,10 @@ h1 {
     margin-top: 12px;
 }
 
+.geminput {
+    min-height: 100px;
+}
+
 .geminput:hover {
     /* Start the shake animation and make the animation last for 0.5 seconds */
     animation: shake 0.75s; 
