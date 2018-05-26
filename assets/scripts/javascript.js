@@ -74,12 +74,8 @@
                 $('.gameCounter').html("GAMES: "+ gamesTotal);
 
                 //$('.')
-
-                console.log(gemGoal);
-                console.log(total);
                 
                 var barHolder = Math.floor((total/gemGoal)*100);
-                console.log("current percentage bar: " + barHolder);
 
                 //                  this took entirely too long and it would've worked the way I wrote it originally
                 // (╯°□°）╯︵ ┻━┻   if i'd actually looked at the we3 examples and seen they used bootstrap 3 and the 
@@ -98,7 +94,6 @@
                         $('.progress-bar').css('background-color', "orange");
                         gameIsPlaying = false;
                         bustaBusta = false;
-                        console.log('win');
                         checkThisVictory();
 
                     } else {
@@ -106,7 +101,6 @@
                         $('.progress-bar').attr('aria-valuenow', 100).css('width', 100+"%");
                         $('.progress-bar').css('background-color', "darkred");
                         bustaBusta = true;
-                        console.log('bust');
                         gameIsPlaying = false;
                         checkThisVictory();
 
@@ -117,7 +111,6 @@
                     $('.progress-bar').attr('aria-valuenow', 100).css('width', 100+"%");
                     $('.progress-bar').css('background-color', "darkred");
                     bustaBusta = true;
-                    console.log('bust 2');
                     gameIsPlaying = false;
                     checkThisVictory();
 
@@ -132,9 +125,7 @@
                 if (gameIsPlaying == true) {
             
                     var buttonClick = $(this).attr("value");
-                    console.log(this);
                     buttonClick = parseInt(buttonClick);
-                    console.log(buttonClick);
                     total = buttonClick + total;
 
                     displayOutputUpdate();
@@ -171,11 +162,13 @@
             function checkThisVictory() {
 
                 if (bustaBusta == true) {
+
                     $('.bustMessage').css('visibility', 'visible').css('color', 'red').css('-webkit-text-stroke-color', 'darkred').text('BUST!');
-                    console.log('HITTING BUST CHECK');
+
                 } else if (bustaBusta == false) {
+
                     $('.bustMessage').css('visibility', 'visible').css('color', 'palegoldenrod').css('-webkit-text-stroke-color', 'white').text('WIN!');
-                    console.log('HITTING WIN CHECK');
+
                 }
 
                  $('.bustMessage').addClass('bounceIn');
@@ -188,9 +181,7 @@
                         $('.customModal').css('display', 'block');
                         $('.modalBannerText').html('YOU BUSTED!').attr('id', 'modalTextBusted');
                         $('#modalBodyText').html("BETTER LUCK NEXT TIME!");
-                        gamesTotal++;
-                        console.log('games ' + gamesTotal);
-                        
+                        gamesTotal++;                        
                         
                     } else {
 
@@ -199,12 +190,10 @@
                         $('#modalBodyText').html("YOU MATCHED THE DIAMOND!");
                         gamesTotal++;
                         winsTotal++;
-                        console.log('wins ' + winsTotal);
-                        console.log('games ' + gamesTotal);
 
                     }
 
-                }, 500)
+                }, 800)
 
             }
 
